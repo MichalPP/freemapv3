@@ -1,0 +1,82 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sk" lang="sk" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>freemap.sk v3</title>
+<style type="text/css">@@@css@@@</style>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/sk_SK/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id='topmenu'>
+	<span id='topmenushow' class='smallnav'><i class='fa fa-home'></i></span>
+	<a href='#leftmenu' id='leftmenushow' class='smallnav'><i class='fa fa-bars'></i></a>
+	<span id='toright' class='smallnav'><i class='fa fa-map'></i></span>
+	<span id='toleft' class='smallnav'><i class='fa fa-align-left'></i></span>
+</div>
+<div id='topsmallmenu' >
+	<a href="#domov"><i class='fa fa-home'></i> domov</a> 
+	<span class='toright hiddennav'><i class='fa fa-map'></i> mapa</span>
+	<a href='#leftmenu' class="hiddennav"><i class='fa fa-bars'></i> menu</a>
+	<a href="#galeria"><i class='fa fa-picture-o'></i> galéria</a> 
+	<a href="#HowWeHelp">služby</a>
+	<a href="#FreemapSlovakia"><i class='fa fa-info'></i> O nás</a>
+	<span>OZ</span> 
+	<a href='#FileDownload'><i class='fa fa-download'></i> download</a> 
+	<a href='#HowToHelp'>&curren; podpor</a>
+	<a href='#funkcie'>&fnof; funkcie</a>
+	<a href="#legenda"><i class='fa fa-map-signs'></i> legenda</a>
+	<a href="#copyright"><i class='fa fa-creative-commons'></i> copyright</a>
+	<a href="#StarterGuide"><i class='fa fa-question'></i> ako mapovať</a>
+	<a href="#kontakt"><i class='fa fa-envelope-o'></i> kontakt</a>
+	<a href='http://wiki.freemap.sk'><i class='fa fa-wikipedia-w'></i> wiki</a>
+	<a href='http://www.oma.sk'><i class='fa fa-cog'></i> oma.sk</a>
+	<span><i class='fa fa-sign-in'></i> login</span>
+</div>
+
+<div class='fullh' id='left'>
+	<div id='leftmenu' class='leftmenu submenu'>
+		<a href="#domov"><i class='fa fa-home'></i> domov</a>
+		<a href='#hladaj'><i class='fa fa-search'></i> hľadaj</a> 
+		<a href='#trasy'><i class='fa fa-line-chart'></i> trasy</a>
+		<a href="#navigacia"><i class='fa fa-road'></i> navigácia</a>
+		<a href='#okolie'>O body</a>
+		<a href='#vrstvy'><i class='fa fa-database'></i> vrsty</a>
+		<a href="#objekty"><i class='fa fa-map-pin'></i> objekty</a> 
+        <a href="#galeria"><i class='fa fa-picture-o'></i> galéria</a> 
+		<a href="#share"><i class='fa fa-share-alt'></i> share</a>
+	</div>
+	<div id='leftpart'>
+		<div id='funkcie' class='submenu'>Popis funkcionality portalu</div>
+		<div id='copyright' class='submenu'>licencia projektu <a href='#OpenStreetMap'>OpenStreetMap</a> je <a href='#Licencia'>Open Database Licence</a>. data su pod ODbL, tajly pod CC, vrstevnice su z tade, ... navigačné ikonky sú z Font Awesome by Dave Gandy - http://fontawesome.io licencované pod CC-BY</div>
+		<div id='kontakt' class='submenu'> Občianske združenie<br/><b>Freemap Slovakia</b><br/>Matičná 8/A5<br/>900 28 Ivanka pri Dunaji<br/><br/><ul><li>freemap@freemap.sk</li><li>Registrované na MV/ VVS/ 1-900/ 90-34343 dňa 2.10.2009</li><li>IČO: 42173639</li><li>DIČ: 2022912870</li><li>Bankové spojenie: VÚB 2746389453/0200</li><li>IBAN: SK33 0200 0000 0027 4638 9453</li></ul></div>
+		<div id='objekty' class='submenu'><div id='informacie'>kliknite na marker alebo zoznam</div><div id='zoznam'>freemap.sk je super projekt</div></div>
+		<div id='trasy' class='submenu'> podla zapnutej vrsty vyhlada viditelne trasy z oma.sk/api </div>
+		<div id='navigacia' class='submenu'>navigacia z A do B podla zapnutej vrsty?</div>
+    <div id='share' class='submenu'>Rozne tlacitka na posielanie sucasnej vrstvy, shorlinky, ... <a href="#" class="permalink">Trvalý odkaz</a></div>
+	<div id='okolie' class='submenu'>co vidim v okoli, zobraz marker, nacitaj, oma.sk/api?tabulka=poi&vzdialenost=50&lat=4&lon=5; asi eventy pri zapnuti (klik na a. zapne, display != 'none' ), vypnuti (klik na ine a. zapne display='none'), posune mapy () </div>
+	<div id='galeria' class='submenu'> Galéria, obrázky a pod</div>
+    <div id='vrstvy' class='submenu'><a href="#FreemapSlovakia">Freemap</a> ponúka vrstvy:
+<ul><li><a href="#" class="vrstva">Turistická mapa</a></li><li><a href="#" class="vrstva">Cykloatlas</a></li><li><a href="#" class="vrstva">Autoatlas</a></li><li><a href="#" class="vrstva">Zimná mapa</a>: najmä bežkárske trasy</li></ul>
+Vrstvy z iných zdrojov (ale stále <a href="#OpenStreetMap">OpenStreetMap</a>):<ul><li><a href="#" class="vrstva">Mapa dopravy</a>: OpenBusMap</li><li><a href="#" class="vrstva">OSM</a>: základná vrstva openstreetmap</li><li><a href="#" class="vrstva">OCM</a>: OpenCycleMap</li></ul>
+Všetky vrstvy pochádzajú zo sesterských projektov v rámci <a href="#OpenStreetMap">OpenStreetMap</a>.
+</div>
+	@@@plugins-html.html@@@
+	<div class='reklamaall'><div class='reklama'></div><div class='reklama'></div></div>
+    <span id="naspat">Späť</span>
+
+</div></div>
+
+
+<div class='fullh' id='mapa'>mapa</div>
+@@@js@@@
+</body>
+</html>

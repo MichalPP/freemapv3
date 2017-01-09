@@ -1,0 +1,39 @@
+body, html { height: 100%; width: 100%; border: 0; margin: 0; }
+#topmenu {height: 60px; position: relative; vertical-align: top; float: left; background-image: url('http://freemap.epsilon.sk/img/freemap-logo.png'); background-position: left; background-repeat: no-repeat; width: 160px; }
+/*#topmenu img { height: 50px; margin: 5px; box-sizing: border-box; padding-left: 8px; padding-right: 8px; }*/
+#left {width: 300px; float: left; padding-left: 8px; padding-right: 8px; box-sizing: border-box; }
+#topsmallmenu { float: none; height: 60px;   }
+#mapa { max-height: 100%; position: inline-block;}
+#leftpart, .leftmenu { overflow-y: auto; overflow-x: hidden;}
+.reklamaall { height: 70px; background-color: green; position: absolute; bottom: 0; }
+.reklama {float: right; height: 70px;}
+#naspat { color: red; vertical-align: right; float:right; margin: 20px; }
+div .reklama { float: left; }
+.fullh {position: inline-block; overflow: auto;}
+.clicked { color: green; }
+.submenu { display: none; overflow: auto; }
+div.submenu img {max-width: 100%; }
+.smallnav { display: none; font-size: 50px; vertical-align: center; margin: 5px; text-decoration: none; color: black; }
+.hiddennav { display: none; }
+#logo {  overflow: hidden; height: 50px; float: left; width: 160px; }
+#leftmenu > a, #topsmallmenu > a { margin: 5px; white-space: nowrap; }
+#legenda img { margin-right: 6px; margin-left: 6px; }
+.legendtitle {font-weight: bold; }
+input { font-size: 1.2em; height: 1.5em; max-width: 250px; }
+@media all and (max-width: 520px ) {
+    #left { width: 100%; float: none; }
+    .tofull, #leftmenu { display: none; }
+    #topmenu { text-align: right; float: none; width: 100%;}
+    #topsmallmenu { float: default; }
+    #leftmenu > a, #topsmallmenu > a, #leftmenu > span, #topsmallmenu > span { margin: 20px; display: list-item; }
+    @@@plugins-css-mobile.html@@@
+}
+a[href^="http://"]:after, a[href^="https://"]:after {
+    font-family: FontAwesome;
+   content: "\00A0\f08e";
+}
+h1,h2,h3,h5 {
+    font-size: 110%;
+}
+
+@@@plugins-css.html@@@
