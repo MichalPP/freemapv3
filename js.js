@@ -18,7 +18,6 @@ var activedivname = 'Domov';
 
 var visiblehei = 400;
 
-
 loc = {};
 var a=$.deserialize(location.hash.replace('#', ''), {});
 if(typeof a['map'] === 'string') {
