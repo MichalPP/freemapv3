@@ -8,9 +8,7 @@ $config['share'] = array(
 	'css-mobile' => '',
 	// js funckie zavolane onload, jquery
 	'jquery'=> "", 
-	// do mapy on start: pridaj layer, resp premaz layer, mam geojson layer, zvladne vsetko
-	// do mapy on move: napln layer
-	// asi netreba: do mapy on close: vypni layer
+	'onmove_minzoom' => 8,
 	'onmove' => '
 $.getJSON("http://www.oma.sk/api?lat="+mapa.getCenter().lat+"&lon="+mapa.getCenter().lng+"&tabulka=regiony&format=fm&callback=?", function (data) {
     routeLayer.clearLayers();
@@ -23,6 +21,10 @@ $.getJSON("http://www.oma.sk/api?lat="+mapa.getCenter().lat+"&lon="+mapa.getCent
 	        $("#share_zoznam").append("<p><a href=\'"+feature.properties.uri+"\' id=\'"+feature.properties.id+"\'>"+feature.properties.name+"</a></p>");
 		}
     });
+	data = [{"type": "Feature", "geometry":{ "type": "Point", "coordinates": [mapa.getCenter().lng, mapa.getCenter().lat]},
+                "properties":{"name":"stred", "id":1}
+                }];
+	routeLayer.addData(data);
 });
 '
 );
