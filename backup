@@ -1,6 +1,0 @@
-d=`date +"%Y-%m-%d"`
-mkdir old/$d
-cp -p js.js freemap.html do.php old/$d
-cd ../
-tar -c -f freemap-v3.tar.bz2 --bzip2 --exclude tmp --exclude www --exclude old freemap-v3
-cp -p freemap-v3.tar.bz2 freemap-v3/old/$d/
