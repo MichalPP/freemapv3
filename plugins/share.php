@@ -13,7 +13,7 @@ $config['share'] = array(
 $.getJSON("http://www.oma.sk/api?lat="+mapa.getCenter().lat+"&lon="+mapa.getCenter().lng+"&tabulka=regiony&format=fm&callback=?", function (data) {
     routeLayer.clearLayers();
     //routeLayer.addData(data);
-    $(".zoznam").text(" ");
+    $(".zoznam").text(" "); var share_first=true;
     $.each(data, function(k, feature) { 
 		if(jQuery.inArray(feature.properties.typ, ["chko", "pohorie"]) > -1) {
 			$("#share_chko_zoznam").append("<p id=\'"+feature.properties.id+"\' >"+feature.properties.description+"</p>");
@@ -22,6 +22,11 @@ $.getJSON("http://www.oma.sk/api?lat="+mapa.getCenter().lat+"&lon="+mapa.getCent
 			}
 		} else {
 	        $("#share_zoznam").append("<p><a href=\'"+feature.properties.uri+"\' id=\'"+feature.properties.id+"\'>"+feature.properties.name+"</a></p>");
+			if(feature.properties.typ=="obec" & share_first) {
+                $("#share_zoznam").append("<a href=\'"+feature.properties.uri+"\'><img src=\'http://www.oma.sk/img/oblasti/"+feature.properties.name_asci+".oma.sk-autoatlas.jpg\' /></a>");
+				share_first = false;
+            }  
+
 		}
     });
 	data = [{"type": "Feature", "geometry":{ "type": "Point", "coordinates": [mapa.getCenter().lng, mapa.getCenter().lat]},
