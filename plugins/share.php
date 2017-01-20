@@ -17,6 +17,9 @@ $.getJSON("http://www.oma.sk/api?lat="+mapa.getCenter().lat+"&lon="+mapa.getCent
     $.each(data, function(k, feature) { 
 		if(jQuery.inArray(feature.properties.typ, ["chko", "pohorie"]) > -1) {
 			$("#share_chko_zoznam").append("<p id=\'"+feature.properties.id+"\' >"+feature.properties.description+"</p>");
+			if(feature.properties.typ=="pohorie") {
+				$("#share_chko_zoznam").append("<a href=\'"+feature.properties.uri+"\'><img src=\'http://www.oma.sk/img/oblasti/"+feature.properties.name_asci+".oma.sk-turisticky-atlas.jpg\' /></a>");
+			}
 		} else {
 	        $("#share_zoznam").append("<p><a href=\'"+feature.properties.uri+"\' id=\'"+feature.properties.id+"\'>"+feature.properties.name+"</a></p>");
 		}
