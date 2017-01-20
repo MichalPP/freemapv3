@@ -6,12 +6,14 @@ rm www/data/*
 if [ "$1" = "true" ]; then
 	wget -q -O - 'http://www.freemap.sk/?c=core.map.legend&Ajax=LeftArea' |sed "s/ style='[^']*'//g" | sed 's/valign=[^ ]* //g' |sed 's#<[/]*span[ ]*>##g' | php embedimg.php http://www.freemap.sk > tmp/freemap-legenda.html;
 	wget -q -O tmp/objekty.html 'http://www.oma.sk/js/objekty.html'
+	fa="4.7.0"
 	# http://fontawesome.io/assets/font-awesome-4.7.0.zip
 	mkdir -p www/fonts; cp -p img/font-awesome-4.4.0/fonts/* www/fonts/;
 	mkdir -p www/img; cp -p img/freemap-logo.png www/img/;
 	mkdir -p tmp/wiki; rm tmp/wiki/*
 	mkdir -p tmp/lib-js; rm tmp/lib-js/*
-	cd tmp; wget https://github.com/perliedman/leaflet-routing-machine/archive/v3.2.4.zip; unzip v3.2.4.zip; cp leaflet-routing-machine-3.2.4/dist/leaflet-routing-machine.min.js lrm.js; cd ../; cp tmp/leaflet-routing-machine-3.2.4/dist/leaflet.routing.icons.png www/
+	lrm="3.2.4";
+	cd tmp; wget https://github.com/perliedman/leaflet-routing-machine/archive/v$lrm.zip; unzip v$lrm.zip; cp leaflet-routing-machine-$lrm/dist/leaflet-routing-machine.min.js lrm.js; cd ../; cp tmp/leaflet-routing-machine-$lrm/dist/leaflet.routing.icons.png www/
 	$i=0;
 	for l in `echo "http://code.jquery.com/jquery-1.11.3.js
 https://raw.githubusercontent.com/creative-area/jQuery-form-autofill/master/jquery.formautofill.js
@@ -25,7 +27,7 @@ https://github.com/vogdb/Leaflet.ActiveLayers/raw/master/src/ActiveLayers.js"`; 
 	done
 	cat  tmp/lib-js/[0-3]* |yui-compressor --type js > tmp/lib-js/90.js
 	wget -q -O - 'http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css' | php embedimg.php http://cdn.leafletjs.com/leaflet-0.7.5 > tmp/leaflet.css
-	wget -q -O - 'http://www.liedman.net/leaflet-routing-machine/dist/leaflet-routing-machine.css' | php embedimg.php http://www.liedman.net/leaflet-routing-machine/dist >> tmp/leaflet.css
+	cat leaflet-routing-machine-$lrm/dist/leaflet-routing-machine.css | php embedimg.php http://www.liedman.net/leaflet-routing-machine/dist >> tmp/leaflet.css
 fi
 
 php do.php false
