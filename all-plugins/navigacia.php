@@ -46,6 +46,14 @@ mapa.on("contextmenu", function(e) {
 	else { control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng); }
 });
 
+mapa.on("click", function(e) {
+    if(activediv != "#navigacia") { return false; }
+    if(control.getWaypoints()[0].name == "" ) { control.spliceWaypoints(0, 1, e.latlng); }
+    else { control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng); }
+});
+
+
+
 ';
 file_put_contents('www/data/navigacia.html', '
 <script type="text/javascript">'.$navigacia_js.'</script>
