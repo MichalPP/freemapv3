@@ -25,6 +25,7 @@ function navigacia_router() {
 	if(vrstva == "OSM") { var navigacia_router = "https://router.project-osrm.org/route/v1"; }
 	else if(vrstva == "Turistická mapa") { var navigacia_router = "http://pesi.routing.epsilon.sk/route/v1"; }
 	else if(vrstva == "Cykloatlas" || vrstva == "OCM") { var navigacia_router = "http://mtb-bike.routing.epsilon.sk/route/v1"; }
+    else if(vrstva == "Zimná mapa") { var navigacia_router = "http://test.routing.epsilon.sk/route/v1"; }
 	else { var navigacia_router = "http://pesi.routing.epsilon.sk/route/v1"; }
 	console.log(navigacia_router);
 	return navigacia_router;
