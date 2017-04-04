@@ -1,4 +1,5 @@
 <?php
+// mediawiki https://wiki.openstreetmap.org/wiki/Slovakia/MappingParty?action=render
 function towikilower($m) {
     return "<a href='#".strtolower($m[1])."'>".$m[2]."</a>";
     }
