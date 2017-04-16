@@ -15,6 +15,7 @@ $config['navigacia'] = array(
 // todo: https://github.com/perliedman/leaflet-control-geocoder
 $navigacia_js = file_get_contents('tmp/lrm.js');
 $navigacia_js .= '
+
 mapa.on("baselayerchange", function(e) {
   control.getRouter().options.serviceUrl = navigacia_router();
   control.route();
@@ -22,13 +23,13 @@ mapa.on("baselayerchange", function(e) {
 
 function navigacia_router() {
 	vrstva=$("input.leaflet-control-layers-selector:checked").parent().children("span").html().trim();
-	if(vrstva == "OSM") { var navigacia_router = "https://router.project-osrm.org/route/v1"; }
-	else if(vrstva == "Turistická mapa") { var navigacia_router = "http://pesi.routing.epsilon.sk/route/v1"; }
-	else if(vrstva == "Cykloatlas" || vrstva == "OCM") { var navigacia_router = "http://mtb-bike.routing.epsilon.sk/route/v1"; }
-    else if(vrstva == "Zimná mapa") { var navigacia_router = "http://test.routing.epsilon.sk/route/v1"; }
-	else { var navigacia_router = "http://pesi.routing.epsilon.sk/route/v1"; }
-	console.log(navigacia_router);
-	return navigacia_router;
+	if(vrstva == "Autoatlas") { navigaciaRouter = "https://router.project-osrm.org/route/v1"; }
+	else if(vrstva == "Turistická mapa") { navigaciaRouter = "http://pesi.routing.epsilon.sk/route/v1"; }
+	else if(vrstva == "Cykloatlas" || vrstva == "OCM") { navigaciaRouter = "http://mtb-bike.routing.epsilon.sk/route/v1"; }
+    else if(vrstva == "Zimná mapa") { navigaciaRouter = "http://test.routing.epsilon.sk/route/v1"; }
+	//else { var navigacia_router = "http://pesi.routing.epsilon.sk/route/v1"; }
+	console.log(navigaciaRouter);
+	return navigaciaRouter;
 }
 
 var control = L.Routing.control({
@@ -39,6 +40,8 @@ var control = L.Routing.control({
 
 var routeBlock = control.onAdd(mapa); document.getElementById("navigacia").appendChild(routeBlock);
 //$(".leaflet-routing-container").height(visiblehei);
+
+var navigaciaRouter = "http://pesi.routing.epsilon.sk/route/v1";
 
 mapa.on("contextmenu", function(e) {
 	if(activediv != "#navigacia") { return false; }
