@@ -52,7 +52,8 @@ mapa.on("contextmenu", function(e) {
 mapa.on("click", function(e) {
     if(activediv != "#navigacia") { return false; }
     if(control.getWaypoints()[0].name == "" ) { control.spliceWaypoints(0, 1, e.latlng); }
-    else { control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng); }
+	else if(control.getWaypoints()[1].name == "" ) { control.spliceWaypoints(1, 1, e.latlng); }
+    //else { control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng); }
 });
 
 
