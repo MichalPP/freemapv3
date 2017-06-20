@@ -33,7 +33,7 @@ function navigacia_router() {
 }
 
 var control = L.Routing.control({
-	language: "sk", fitSelectedRoutes: false, geocoder: "TODO",
+	language: "sk", fitSelectedRoutes: false, geocoder: L.Control.Geocoder.nominatim(),
 	lineOptions: { styles: [{color: "red", opacity: 0.5, weight: 15}] },
 	serviceUrl: navigacia_router()
 });

@@ -13,7 +13,9 @@ if [ "$1" = "true" ]; then
 	mkdir -p tmp/wiki; rm tmp/wiki/*
 	mkdir -p tmp/lib-js; rm tmp/lib-js/*
 	lrm="3.2.4";
-	cd tmp; wget https://github.com/perliedman/leaflet-routing-machine/archive/v$lrm.zip; unzip v$lrm.zip; cp leaflet-routing-machine-$lrm/dist/leaflet-routing-machine.min.js lrm.js; cd ../; cp tmp/leaflet-routing-machine-$lrm/dist/leaflet.routing.icons.png www/
+	cd tmp; 
+	wget -q -O - http://www.liedman.net/leaflet-control-geocoder/Control.Geocoder.js > lrm.js;
+	wget https://github.com/perliedman/leaflet-routing-machine/archive/v$lrm.zip; unzip v$lrm.zip; cat leaflet-routing-machine-$lrm/dist/leaflet-routing-machine.min.js >> lrm.js; cd ../; cp tmp/leaflet-routing-machine-$lrm/dist/leaflet.routing.icons.png www/
 	$i=0;
 	for l in `echo "http://code.jquery.com/jquery-1.11.3.js
 https://raw.githubusercontent.com/creative-area/jQuery-form-autofill/master/jquery.formautofill.js
