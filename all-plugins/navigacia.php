@@ -18,24 +18,33 @@ $navigacia_js .= '
 
 mapa.on("baselayerchange", function(e) {
   control.getRouter().options.serviceUrl = navigacia_router();
+  control.getRouter().options.profile = navigacia_profile();
   control.route();
 });
 
 function navigacia_router() {
 	vrstva=$("input.leaflet-control-layers-selector:checked").parent().children("span").html().trim();
 	if(vrstva == "Autoatlas") { navigaciaRouter = "https://router.project-osrm.org/route/v1"; }
-	else if(vrstva == "Turistická mapa") { navigaciaRouter = "http://pesi.routing.epsilon.sk/route/v1"; }
-	else if(vrstva == "Cykloatlas" || vrstva == "OCM") { navigaciaRouter = "http://mtb-bike.routing.epsilon.sk/route/v1"; }
-    else if(vrstva == "Zimná mapa") { navigaciaRouter = "http://test.routing.epsilon.sk/route/v1"; }
+	else if(vrstva == "Turistická mapa") { navigaciaRouter = "http://routing.epsilon.sk/route/v1"; }
+	else if(vrstva == "Cykloatlas" || vrstva == "OCM") { navigaciaRouter = "http://routing.epsilon.sk/route/v1"; }
+    else if(vrstva == "Zimná mapa") { navigaciaRouter = "http://routing.epsilon.sk/route/v1"; }
 	//else { var navigacia_router = "http://pesi.routing.epsilon.sk/route/v1"; }
 	console.log(navigaciaRouter);
+	return navigaciaRouter;
+}
+function navigacia_profile() {
+    vrstva=$("input.leaflet-control-layers-selector:checked").parent().children("span").html().trim();
+    if(vrstva == "Autoatlas") { navigaciaRouter = "driving"; }
+    else if(vrstva == "Turistická mapa") { navigaciaRouter = "pesi"; }
+    else if(vrstva == "Cykloatlas" || vrstva == "OCM") { navigaciaRouter = "bike"; }
+    else if(vrstva == "Zimná mapa") { navigaciaRouter = "test"; }
 	return navigaciaRouter;
 }
 
 var control = L.Routing.control({
 	language: "sk", fitSelectedRoutes: false, geocoder: L.Control.Geocoder.nominatim(),
 	lineOptions: { styles: [{color: "red", opacity: 0.5, weight: 15}] },
-	serviceUrl: navigacia_router()
+	serviceUrl: navigacia_router(), profile: navigacia_profile(),
 });
 
 var routeBlock = control.onAdd(mapa); document.getElementById("navigacia").appendChild(routeBlock);
