@@ -35,7 +35,7 @@ function navigacia_router() {
 function navigacia_profile() {
     vrstva=$("input.leaflet-control-layers-selector:checked").parent().children("span").html().trim();
     if(vrstva == "Autoatlas") { navigaciaRouter = "driving"; }
-    else if(vrstva == "Turistická mapa") { navigaciaRouter = "pesi"; }
+    else if(vrstva == "Turistická mapa") { navigaciaRouter = "foot"; }
     else if(vrstva == "Cykloatlas" || vrstva == "OCM") { navigaciaRouter = "bike"; }
     else if(vrstva == "Zimná mapa") { navigaciaRouter = "test"; }
 	return navigaciaRouter;
