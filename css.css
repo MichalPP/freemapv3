@@ -5,10 +5,7 @@ body, html { height: 100%; width: 100%; border: 0; margin: 0; }
 #topsmallmenu { float: none; height: 60px;   }
 #mapa { max-height: 100%; position: inline-block;}
 #leftpart, .leftmenu { overflow-y: auto; overflow-x: hidden;}
-.reklamaall { height: 70px; background-color: green; position: absolute; bottom: 0; }
-.reklama {float: right; height: 70px;}
 #naspat { color: red; vertical-align: right; float:right; margin: 20px; }
-div .reklama { float: left; }
 .fullh {position: inline-block; overflow: auto;}
 .clicked { color: green; }
 .submenu { display: none; overflow: auto; }

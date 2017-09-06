@@ -26,7 +26,7 @@ if(typeof a['map'] === 'string') {
 
 
 var mapa = new L.Map("mapa",{ layers: [window[loc[0]] || T], 
-	zoom: loc[1] || 8, center: [loc[2]||48.53479,loc[3]||19.80286], 
+	zoom: loc[1] || 11, center: [loc[2]||48.12187,loc[3]||17.20734], 
 	minZoom: 6 });
 mapa.attributionControl.setPrefix("");
 L.control.scale({imperial:false}).addTo(mapa);
@@ -126,19 +126,19 @@ function resizebigger() {
 		$("#leftmenu").addClass("submenu");
 		if(divshow('#'+a['page']) == false) { $("#left").hide(); $("#mapa").show(); }
 		console.log("whei "+whei+" "+$("#topmenu").height()+" reklama: "+$(".reklamaall").height());
-		var visiblehei = whei - $("#topmenu").height() - $(".reklamaall").height();
-		$("#leftmenu, #topsmallmenu, div.submenu").height(whei - $("#topmenu").height() - $(".reklamaall").height());
+		var visiblehei = whei - $("#topmenu").height();
+		$("#leftmenu, #topsmallmenu, div.submenu").height(visiblehei);
 	} else {
 		$("#left").show(); $("#mapa").show(); $(".smallnav").hide(); $("#topmenushow").hide();
 		$("#topsmallmenu").show().removeClass("fullh").height("60px");
 		$(".tofull").removeClass("fullh").height("auto");$("div.submenu").removeClass("fullh").height("auto");
 		$("#leftmenu").show().height("auto").removeClass("submenu");
 		console.log("whei "+whei+" "+$("#topmenu").height()+" reklama: "+$(".reklamaall").height());
-		var visiblehei = whei - $("#topmenu").height()- $("#leftmenu").height() - $(".reklamaall").height();
-		$(".submenu").height(whei - $("#topmenu").height()- $("#leftmenu").height() - $(".reklamaall").height());
+		var visiblehei = whei - $("#topmenu").height()- $("#leftmenu").height() - 8;
+		$(".submenu").height(visiblehei);
 	}
 	console.log("whei "+whei+" "+$("#topmenu").height()+" reklama: "+$(".reklamaall").height());
-	$(".fullh").height(whei - $("#topmenu").height()-2);
+	$(".fullh").height(whei - $("#topmenu").height()-8);
 	//$("body, html").height(whei);
 	mapa.invalidateSize();
 }
