@@ -24,7 +24,7 @@ mapa.on("baselayerchange", function(e) {
 
 function navigacia_router() {
 	vrstva=$("input.leaflet-control-layers-selector:checked").parent().children("span").html().trim();
-	if(vrstva == "Autoatlas") { navigaciaRouter = "https://router.project-osrm.org/route/v1"; }
+	if(vrstva == "Autoatlas") { navigaciaRouter = "http://routing.epsilon.sk/route/v1"; }
 	else if(vrstva == "Turistická mapa") { navigaciaRouter = "http://routing.epsilon.sk/route/v1"; }
 	else if(vrstva == "Cykloatlas" || vrstva == "OCM") { navigaciaRouter = "http://routing.epsilon.sk/route/v1"; }
     else if(vrstva == "Zimná mapa") { navigaciaRouter = "http://routing.epsilon.sk/route/v1"; }
@@ -34,7 +34,7 @@ function navigacia_router() {
 }
 function navigacia_profile() {
     vrstva=$("input.leaflet-control-layers-selector:checked").parent().children("span").html().trim();
-    if(vrstva == "Autoatlas") { navigaciaRouter = "driving"; }
+    if(vrstva == "Autoatlas") { navigaciaRouter = "car"; }
     else if(vrstva == "Turistická mapa") { navigaciaRouter = "foot"; }
     else if(vrstva == "Cykloatlas" || vrstva == "OCM") { navigaciaRouter = "bike"; }
     else if(vrstva == "Zimná mapa") { navigaciaRouter = "test"; }
