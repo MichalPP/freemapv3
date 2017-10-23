@@ -16,7 +16,7 @@ function pocasie_routeclick(feature) {
 	}
 ', 
 	'onmove' => '
-$.getJSON("http://www.oma.sk/api?bbox="+bbox+"&tabulka=predpoved&callback=?", function (data) {
+$.getJSON("https://data.oma.sk/api.php?bbox="+bbox+"&tabulka=predpoved&callback=?", function (data) {
     routeLayer.clearLayers();
     routeLayer.addData(data);
     $(".zoznam").text(" ");
