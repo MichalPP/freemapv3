@@ -9,7 +9,7 @@ if [ "$1" = "true" ]; then
 	fa="4.7.0"
 	# http://fontawesome.io/assets/font-awesome-4.7.0.zip
 	mkdir -p www/fonts; cp -p img/font-awesome-4.4.0/fonts/* www/fonts/;
-	mkdir -p www/img; cp -p img/freemap-logo.png www/img/;
+	mkdir -p www/img; cp -p img/*.png www/img/;
 	mkdir -p tmp/wiki; rm tmp/wiki/*
 	mkdir -p tmp/lib-js; rm tmp/lib-js/*
 	lrm="3.2.4";
