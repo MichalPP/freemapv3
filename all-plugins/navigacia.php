@@ -24,10 +24,10 @@ mapa.on("baselayerchange", function(e) {
 
 function navigacia_router() {
 	vrstva=$("input.leaflet-control-layers-selector:checked").parent().children("span").html().trim();
-	if(vrstva == "Autoatlas") { navigaciaRouter = "http://routing.epsilon.sk/route/v1"; }
-	else if(vrstva == "Turistická mapa") { navigaciaRouter = "http://routing.epsilon.sk/route/v1"; }
-	else if(vrstva == "Cykloatlas" || vrstva == "OCM") { navigaciaRouter = "http://routing.epsilon.sk/route/v1"; }
-    else if(vrstva == "Zimná mapa") { navigaciaRouter = "http://routing.epsilon.sk/route/v1"; }
+	if(vrstva == "Autoatlas") { navigaciaRouter = "https://routing.epsilon.sk/route/v1"; }
+	else if(vrstva == "Turistická mapa") { navigaciaRouter = "https://routing.epsilon.sk/route/v1"; }
+	else if(vrstva == "Cykloatlas" || vrstva == "OCM") { navigaciaRouter = "https://routing.epsilon.sk/route/v1"; }
+    else if(vrstva == "Zimná mapa") { navigaciaRouter = "https://routing.epsilon.sk/route/v1"; }
 	//else { var navigacia_router = "http://pesi.routing.epsilon.sk/route/v1"; }
 	console.log(navigaciaRouter);
 	return navigaciaRouter;
@@ -50,7 +50,7 @@ var control = L.Routing.control({
 var routeBlock = control.onAdd(mapa); document.getElementById("navigacia").appendChild(routeBlock);
 //$(".leaflet-routing-container").height(visiblehei);
 
-var navigaciaRouter = "http://pesi.routing.epsilon.sk/route/v1";
+var navigaciaRouter = "https://routing.epsilon.sk/route/v1";
 
 mapa.on("contextmenu", function(e) {
 	if(activediv != "#navigacia") { return false; }

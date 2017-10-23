@@ -18,7 +18,7 @@ $config['galeria'] = array(
 	// do mapy on move: napln layer
 	'onmove' => '
 if(mapa.getZoom() < 15) return;
-$.getJSON("http://www.oma.sk/api?bbox="+bbox+"&tabulka=foto&format=fm&callback=?", function (data) {
+$.getJSON("https://data.oma.sk/api.php?bbox="+bbox+"&tabulka=foto&format=fm&callback=?", function (data) {
 	routeLayer.clearLayers();
 	routeLayer.addData(data);
 	$(".zoznam").text(" ");

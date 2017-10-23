@@ -43,7 +43,7 @@ var typy = "";
 $("#objekty_kategorie_menu input:checked").each(function() { if(typeof $(this).attr("name") !== "undefined") { typy = typy+$(this).attr("name")+",";} });
 if(typy.length >4) { typy = "&typ="+typy; }
 
-$.getJSON("http://www.oma.sk/api?bbox="+bbox+"&tabulka=poi"+typy+"&format=fm&callback=?", function (data) {
+$.getJSON("https://data.oma.sk/api.php?bbox="+bbox+"&tabulka=poi"+typy+"&format=fm&callback=?", function (data) {
 	routeLayer.clearLayers();
 	routeLayer.addData(data);
 	$(".zoznam").text(" ");

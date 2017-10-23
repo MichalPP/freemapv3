@@ -40,7 +40,7 @@ else if(vrstva == "Cykloatlas" || vrstva == "OCM") { trasy="cyklotrasa"; }
 else if(vrstva == "Zimná mapa") { trasy="lyziarskatrasa"; }
 else if(vrstva == "Mapa dopravy") { trasy="mhd"; }
 else { return; }
-$.getJSON("http://www.oma.sk/api?bbox="+bbox+"&tabulka=trasy&typ="+trasy+"&format=fm&callback=?", function (data) {
+$.getJSON("https://data.oma.sk/api.php?bbox="+bbox+"&tabulka=trasy&typ="+trasy+"&format=fm&callback=?", function (data) {
 	routeLayer.clearLayers();
 	routeLayer.addData(data);
 	$(".zoznam").text(" ");

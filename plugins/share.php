@@ -10,7 +10,7 @@ $config['share'] = array(
 	'jquery'=> "", 
 	'onmove_minzoom' => 8,
 	'onmove' => '
-$.getJSON("http://www.oma.sk/api?lat="+mapa.getCenter().lat+"&lon="+mapa.getCenter().lng+"&tabulka=regiony&format=fm&callback=?", function (data) {
+$.getJSON("https://data.oma.sk/api.php?lat="+mapa.getCenter().lat+"&lon="+mapa.getCenter().lng+"&tabulka=regiony&format=fm&callback=?", function (data) {
     routeLayer.clearLayers();
     //routeLayer.addData(data);
     $(".zoznam").text(" "); var share_first=true;
@@ -18,12 +18,12 @@ $.getJSON("http://www.oma.sk/api?lat="+mapa.getCenter().lat+"&lon="+mapa.getCent
 		if(jQuery.inArray(feature.properties.typ, ["chko", "pohorie"]) > -1) {
 			$("#share_chko_zoznam").append("<p id=\'"+feature.properties.id+"\' >"+feature.properties.description+"</p>");
 			if(feature.properties.typ=="pohorie") {
-				$("#share_chko_zoznam").append("<a href=\'"+feature.properties.uri+"\'><img src=\'http://www.oma.sk/img/oblasti/"+feature.properties.name_asci+".oma.sk-turisticky-atlas.jpg\' /></a>");
+				$("#share_chko_zoznam").append("<a href=\'"+feature.properties.uri+"\'><img src=\'https://data.oma.sk/img/oblasti/"+feature.properties.name_asci+".oma.sk-turisticky-atlas.jpg\' /></a>");
 			}
 		} else {
 	        $("#share_zoznam").append("<p><a href=\'"+feature.properties.uri+"\' id=\'"+feature.properties.id+"\'>"+feature.properties.name+"</a></p>");
 			if(feature.properties.typ=="obec" & share_first) {
-                $("#share_zoznam").append("<a href=\'"+feature.properties.uri+"\'><img src=\'http://www.oma.sk/img/oblasti/"+feature.properties.name_asci+".oma.sk-autoatlas.jpg\' /></a>");
+                $("#share_zoznam").append("<a href=\'"+feature.properties.uri+"\'><img src=\'https://data.oma.sk/img/oblasti/"+feature.properties.name_asci+".oma.sk-autoatlas.jpg\' /></a>");
 				share_first = false;
             }  
 
