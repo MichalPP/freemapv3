@@ -1,12 +1,12 @@
-var T = new L.tileLayer("http://{s}.freemap.sk/T/{z}/{x}/{y}.jpeg", {maxZoom: 16,attribution: 'Podkladové dáta &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> vrstva <a href="http://www.freemap.sk">Freemap.sk</a>'});
-var C = new L.tileLayer("http://{s}.freemap.sk/C/{z}/{x}/{y}.jpeg", {maxZoom: 16,attribution: 'Podkladové dáta &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> vrstva <a href="http://www.freemap.sk">Freemap.sk</a>'});
-var A = new L.tileLayer("http://{s}.freemap.sk/A/{z}/{x}/{y}.jpeg", {maxZoom: 16,attribution: 'Podkladové dáta &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> vrstva <a href="http://www.freemap.sk">Freemap.sk</a>'});
-var K = new L.tileLayer("http://{s}.freemap.sk/K/{z}/{x}/{y}.jpeg", {maxZoom: 16,attribution: 'Podkladové dáta &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> vrstva <a href="http://www.freemap.sk">Freemap.sk</a>'});
-var OBM = new L.tileLayer("http://tileserver.memomaps.de/tilegen/{z}/{x}/{y}.png", {maxZoom: 18, attribution: 'Podkladové dáta &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> vrstva <a href="http://openbusmap.org/">OpenBusMap</a>'});
-var OSM = new L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 18, attribution: 'Podkladové dáta &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>'});
+var T = new L.tileLayer("https://{s}.freemap.sk/T/{z}/{x}/{y}.jpeg", {maxZoom: 16,attribution: 'Podkladové dáta &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> vrstva <a href="http://www.freemap.sk">Freemap.sk</a>'});
+var C = new L.tileLayer("https://{s}.freemap.sk/C/{z}/{x}/{y}.jpeg", {maxZoom: 16,attribution: 'Podkladové dáta &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> vrstva <a href="http://www.freemap.sk">Freemap.sk</a>'});
+var A = new L.tileLayer("https://{s}.freemap.sk/A/{z}/{x}/{y}.jpeg", {maxZoom: 16,attribution: 'Podkladové dáta &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> vrstva <a href="http://www.freemap.sk">Freemap.sk</a>'});
+var K = new L.tileLayer("https://{s}.freemap.sk/K/{z}/{x}/{y}.jpeg", {maxZoom: 16,attribution: 'Podkladové dáta &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> vrstva <a href="http://www.freemap.sk">Freemap.sk</a>'});
+var OBM = new L.tileLayer("https://tileserver.memomaps.de/tilegen/{z}/{x}/{y}.png", {maxZoom: 18, attribution: 'Podkladové dáta &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> vrstva <a href="http://openbusmap.org/">OpenBusMap</a>'});
+var OSM = new L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 18, attribution: 'Podkladové dáta &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>'});
 var OCM = new L.tileLayer("http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png", {maxZoom: 18, attribution: 'Podkladové dáta &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>'});
 
-L.Icon.Default.imagePath = "http://www.oma.sk/js";
+L.Icon.Default.imagePath = "/img";
 var baseLayers = {"Turistická mapa": T,"Cykloatlas": C,"Autoatlas": A,"Zimná mapa": K,"Mapa dopravy": OBM,"OSM": OSM,"OCM": OCM};
 var Layers = {"Turistická mapa":'T',"Cykloatlas":'C',"Autoatlas": 'A',"Zimná mapa":'K',"Mapa dopravy":'OBM',"OSM":'OSM',"OCM":'OCM'};
 
